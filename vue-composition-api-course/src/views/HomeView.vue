@@ -22,9 +22,25 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, watch } from "vue";
+import {
+  ref,
+  reactive,
+  computed,
+  watch,
+  // onBeforeMount,
+  onMounted,
+  // onBeforeUnmount,
+  // onActivated,
+  // onDeactivated,
+  // onBeforeUpdate,
+  // onUpdated,
+} from "vue";
 
 const appTitle = "Hello World";
+
+onMounted(() => {
+  console.log("onMounted");
+});
 
 const counterData = reactive({
   count: 0,
@@ -52,6 +68,29 @@ const increaseCounter = (amount, e) => {
 const decreaseCounter = (amount) => {
   counterData.count -= amount;
 };
+
+// onBeforeMount(() => {
+//   console.log("onBeforeMount");
+// });
+// onMounted(() => {
+//   console.log("onMounted");
+// });
+// onBeforeUnmount(() => {
+//   console.log("onBeforeUnmount");
+// });
+// onActivated(() => {
+//   console.log("onActivated");
+// });
+// onDeactivated(() => {
+//   console.log("onDeactivated");
+// });
+
+// onBeforeUpdate(() => {
+//   console.log("onBeforeUpdate");
+// });
+// onUpdated(() => {
+//   console.log("onUpdated");
+// });
 </script>
 
 <style scoped>
